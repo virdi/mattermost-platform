@@ -105,7 +105,8 @@ export default class LoggedIn extends React.Component {
     }
 
     componentDidMount() {
-        // Initalize websocket
+        // Initialize websocket
+        console.log('logged_in did mount'); //eslint-disable-line no-console
         WebSocketActions.initialize();
 
         // Listen for user
