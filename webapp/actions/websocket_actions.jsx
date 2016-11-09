@@ -36,6 +36,7 @@ export function initialize() {
     }
 
     let connUrl = Utils.getSiteURL();
+    console.log('initializing websocket with url ' + connUrl); //eslint-disable-line no-console
 
     // replace the protocol with a websocket one
     if (connUrl.startsWith('https:')) {
@@ -55,8 +56,6 @@ export function initialize() {
 
     // append the websocket api path
     connUrl += Client.getUsersRoute() + '/websocket';
-
-    console.log('initializing websocket with url ' + connUrl); //eslint-disable-line no-console
 
     WebSocketClient.setEventCallback(handleEvent);
     WebSocketClient.setFirstConnectCallback(handleFirstConnect);

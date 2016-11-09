@@ -1270,7 +1270,12 @@ export function isValidPassword(password) {
 }
 
 export function getSiteURL() {
-    return global.mm_config.SiteURL || window.location.origin;
+    if (global.mm_config.SiteURL) {
+        console.log('got site url from config'); //eslint-disable-line no-console
+        return global.mm_config.SiteURL;
+    }
+    console.log('missing site url from config'); //eslint-disable-line no-console
+    return window.location.origin;
 }
 
 export function handleFormattedTextClick(e) {
