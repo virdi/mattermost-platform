@@ -162,6 +162,7 @@ export default class UserProfile extends React.Component {
         );
 
         const fullname = Utils.getFullName(this.props.user);
+        // const username = Utils.displayUsername(this.props.user.id);
         if (fullname) {
             dataContent.push(
                 <div
